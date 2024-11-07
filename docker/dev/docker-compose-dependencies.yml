@@ -1,0 +1,12 @@
+version: '3'
+services:
+  nats:
+    image: nats:alpine3.15
+    ports:
+    - '4222:4222'
+  redis:
+      image: 'bitnami/redis:6.2.7'
+      environment:
+        - ALLOW_EMPTY_PASSWORD=yes
+      ports:
+        - '6379:6379'

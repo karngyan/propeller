@@ -1,0 +1,32 @@
+ServiceName = "propeller"
+SendTestPayload = true
+SendTestPayloadToTopic = true
+ClientHeader = "x-user-id"
+EnableDeviceSupport = true
+DeviceHeader = "x-device-id"
+DeviceAttributeHeaders = ["x-os", "x-os-version"]
+
+[broker]
+    broker = "redis" # broker = "nats" or "redis"
+    persistence = false
+    [broker.nats]
+        URL = "http://localhost:4222"
+        EmbeddedServer = true
+    [broker.redis]
+        Address = "localhost:6379"
+        Password = ""
+        TLSEnabled = false
+        ClusterModeEnabled = false
+
+[grpc]
+    Address = "0.0.0.0:5011"
+    PingIntervalInSec = 20
+    PingResponseTimeoutInSec = 10
+
+[Logger]
+    Type = "dev" # prod or dev
+
+[Features]
+    [Features.SampleFeature]
+        Enabled = true
+        RolloutPercentage = 100
