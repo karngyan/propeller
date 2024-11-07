@@ -79,17 +79,9 @@ proto-clean:
 build:  proto-generate
 	GOOS=$(UNAME_OS) GOARCH=$(UNAME_ARCH) go build -v -o $(BINARY_OUT) $(MAIN_PACKAGE_PATH)
 
-.PHONY: build-client ## Build the test client binary
-build-client:
+.PHONY: build-sample-client ## Build the test client binary
+build-sample-client:
 	GOOS=$(UNAME_OS) GOARCH=$(UNAME_ARCH) go build -v -o $(CLIENT_BINARY_OUT) $(CLIENT_PACKAGE_PATH)
-
-.PHONY: build-client-linux ## Build the test client binary
-build-client-linux:
-	GOOS=linux GOARCH=amd64 go build -v -o $(CLIENT_BINARY_OUT)-linux $(CLIENT_PACKAGE_PATH)
-
-.PHONY: build-linux ## build the binary file for linux
-build-linux:  proto-generate
-	GOOS=linux GOARCH=amd64 go build -v -o $(BINARY_OUT)-linux $(MAIN_PACKAGE_PATH)
 
 
 
