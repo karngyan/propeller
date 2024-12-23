@@ -1,0 +1,22 @@
+{
+  "name": "propeller-grpc-web-client",
+  "version": "0.0.1",
+  "description": "gRPC-Web client for CRED-CLUB/propeller",
+  "main": "api_pb.js",
+  "types": "api_pb.d.ts",
+  "dependencies": {
+    "grpc-web": "^1.5.0",
+    "google-protobuf": "^3.21.4"
+  },
+  "scripts": {
+    "build": "echo 'Build not required; pre-generated.'",
+    "test": "echo 'Tests not implemented.'"
+  },
+  "keywords": [
+    "grpc-web",
+    "propeller",
+    "cred"
+  ],
+  "author": "Karn",
+  "license": "MIT"
+}
